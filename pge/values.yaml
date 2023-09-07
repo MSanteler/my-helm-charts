@@ -52,6 +52,7 @@ ingress:
     - host: pge.msanteler.com
       paths:
       - path: /
+        pathType: Prefix
         backend:
           service:
             name: pge
