@@ -45,7 +45,7 @@ spec:
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: postgres-postgresql
+                  name: pge-postgres-postgresql
                   key: postgres-password
           ports:
             - name: http
