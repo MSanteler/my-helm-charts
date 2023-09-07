@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   pge:
   - apiVersion: v2
-    appVersion: 0.1.0
+    appVersion: 0.1.1
     created: "2023-09-07T17:15:48.021195-04:00"
     description: A Helm chart for Kubernetes
     digest: 846796c9dbf9483b42b0d71b48bb9333af32c2be544b779b16b476ee420fc004
