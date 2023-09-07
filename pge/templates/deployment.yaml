@@ -33,6 +33,20 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: DB_HOST
+              value: pge-postgres-postgresql
+            - name: DB_USER
+              value: postgres
+            - name: DB_NAME
+              value: postgres
+            - name: DB_SSLMODE
+              value: disable
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-postgresql
+                  key: postgres-password
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
