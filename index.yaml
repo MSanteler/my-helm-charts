@@ -9,6 +9,6 @@ entries:
     name: pge
     type: application
     urls:
-    - pge-0.1.5.tgz
-    version: 0.1.5
+    - pge-0.1.6.tgz
+    version: 0.1.6
 generated: "2023-09-07T17:15:48.020796-04:00"

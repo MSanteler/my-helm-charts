@@ -33,7 +33,8 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: {{ .Values.command }}
+          command: ["/usr/bin/entrypoint.sh"]
+          args: ["rails", "server", "-b", "0.0.0.0"]
           env:
             - name: DB_HOST
               value: pge-postgres-postgresql
