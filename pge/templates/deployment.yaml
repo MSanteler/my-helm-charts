@@ -36,15 +36,15 @@ spec:
           command: ["/usr/bin/entrypoint.sh"]
           args: ["rails", "server", "-b", "0.0.0.0"]
           env:
-            - name: DB_HOST
+            - name: DATABASE_HOST
               value: pge-postgres-postgresql
-            - name: DB_USER
+            - name: DATABASE_USERNAME
               value: postgres
             - name: DB_NAME
               value: postgres
             - name: DB_SSLMODE
               value: disable
-            - name: DB_PASSWORD
+            - name: DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: pge-postgres-postgresql
