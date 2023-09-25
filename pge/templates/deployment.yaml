@@ -40,7 +40,7 @@ spec:
               value: pge-postgres-postgresql
             - name: DATABASE_USERNAME
               value: postgres
-            - name: DB_NAME
+            - name: DATABASE_NAME
               value: postgres
             - name: DB_SSLMODE
               value: disable
