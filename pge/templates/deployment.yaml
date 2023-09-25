@@ -39,16 +39,13 @@ spec:
             - name: DATABASE_HOST
               value: pge-postgres-postgresql
             - name: DATABASE_USERNAME
-              value: postgres
+              value: myuser
             - name: DATABASE_NAME
-              value: postgres
+              value: mydb
             - name: DB_SSLMODE
               value: disable
             - name: DATABASE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: pge-postgres-postgresql
-                  key: postgres-password
+              value: mypassword
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
