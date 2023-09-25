@@ -4,6 +4,8 @@
 
 replicaCount: 1
 
+command: null
+
 image:
   repository: msanteler/my-business-app
   pullPolicy: Always
