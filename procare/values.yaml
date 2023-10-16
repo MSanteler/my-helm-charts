@@ -49,7 +49,7 @@ ingress:
     alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:us-east-2:504785860355:certificate/1d3248a0-f78e-4f8c-8e66-24e0d7dbbc68'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
   hosts:
-    - host: pge.msanteler.com
+    - host: procare.msanteler.com
       paths:
       - path: /
         pathType: Prefix
