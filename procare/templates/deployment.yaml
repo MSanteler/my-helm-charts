@@ -27,12 +27,39 @@ spec:
       serviceAccountName: {{ include "procare.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: db-migrate
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          command: ["sh", "-c", "bundle exec rails db:migrate"]
+          env:
+            - name: DATABASE_HOST
+              value: procare-postgres-postgresql
+            - name: DATABASE_USERNAME
+              value: myuser
+            - name: DATABASE_NAME
+              value: mydb
+            - name: DB_SSLMODE
+              value: disable
+            - name: DATABASE_PASSWORD
+              value: mypassword
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args: ["rails", "server", "-b", "0.0.0.0"]
+          env:
+            - name: DATABASE_HOST
+              value: procare-postgres-postgresql
+            - name: DATABASE_USERNAME
+              value: myuser
+            - name: DATABASE_NAME
+              value: mydb
+            - name: DB_SSLMODE
+              value: disable
+            - name: DATABASE_PASSWORD
+              value: mypassword
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
