@@ -33,11 +33,11 @@ spec:
         - name: KAFKA_LISTENER_SECURITY_PROTOCOL_MAP
           value: "CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT"
         - name: KAFKA_ADVERTISED_LISTENERS
-          value: "PLAINTEXT://procare-kafka:9092"
+          value: "PLAINTEXT://127.0.0.1:9092"
         - name: KAFKA_BROKER_ID
           value: "1"
         - name: KAFKA_CONTROLLER_QUORUM_VOTERS
-          value: "1@procare-kafka:9093"
+          value: "1@127.0.0.1:9093"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes"
         - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
