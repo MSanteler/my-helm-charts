@@ -10,6 +10,6 @@ spec:
   - name: tcp-kafka
     port: 9092
     protocol: TCP
-    targetPort: tcp-kafka
+    targetPort: 9092
   selector:
     app: kafka
