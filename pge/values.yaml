@@ -49,6 +49,7 @@ ingress:
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     kubernetes.io/tls-acme: "true"
+    alb.ingress.kubernetes.io/group.name: 'external'
     alb.ingress.kubernetes.io/certificate-arn: 'arn:aws:acm:us-east-2:504785860355:certificate/1d3248a0-f78e-4f8c-8e66-24e0d7dbbc68'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
   hosts:
